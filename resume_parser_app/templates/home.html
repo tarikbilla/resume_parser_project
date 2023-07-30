@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Parser</title>
+</head>
+<body>
+    <h1>Resume Parser</h1>
+    <form method="post" enctype="multipart/form-data" action="{% url 'process_resumes' %}">
+        {% csrf_token %}
+        <label for="job_description">Job Description:</label><br>
+        <textarea name="job_description" rows="5" cols="40"></textarea><br><br>
+        <label for="resume_zip">Upload Resumes (ZIP):</label><br>
+        <input type="file" name="resume_zip"><br><br>
+        <input type="submit" value="Parse Resumes">
+    </form>
+</body>
+</html>
